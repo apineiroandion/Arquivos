@@ -76,5 +76,22 @@ public class Arquivos {
         File archivo = new File(ruta, nome);
         System.out.println("Lonxitude: " + archivo.length() + " bytes");
     }
+    /*
+    *Metodo que hace de solo lectura el fichero que se le pasa a traves de la ruta absoluta y el nombre del fichero
+    * @param ruta String con la ruta a comprobar
+    * @param nome String con el nombre del fichero
+    */
+    public static void mLectura(String ruta, String nome){
+        File archivo = new File(ruta, nome);
+        if(archivo.setReadOnly()){
+            System.out.println("Ficheiro en modo solo lectura");
+        }else{
+            System.out.println("Ficheiro non en modo solo lectura");
+        }
+    }
+    /*Metodo que hace de solo escritura el fichero que se le pasa a traves de la ruta absoluta y el nombre del fichero
+    * @param ruta String con la ruta a comprobar
+    * @param nome String con el nombre del fichero
+    */
 
 }

@@ -67,5 +67,14 @@ public class Arquivos {
             System.out.println("Escritura non");
         }
     }
+    /*Metodo que calcula la longitud en bytes de un fichero a traves de la ruta absoluta
+     *que se le pasa y el nombre del fichero
+     * @param ruta String con la ruta a comprobar
+     * @param nome String con el nombre del fichero
+     */
+    public static void lonxitudeFicheiro(String ruta, String nome) {
+        File archivo = new File(ruta, nome);
+        System.out.println("Lonxitude: " + archivo.length() + " bytes");
+    }
 
 }

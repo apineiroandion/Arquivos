@@ -93,5 +93,13 @@ public class Arquivos {
     * @param ruta String con la ruta a comprobar
     * @param nome String con el nombre del fichero
     */
+    public static void mEscritura(String ruta, String nome){
+        File archivo = new File(ruta, nome);
+        if(archivo.setWritable(true)){
+            System.out.println("Ficheiro en modo solo escritura");
+        }else{
+            System.out.println("Ficheiro non en modo solo escritura");
+        }
+    }
 
 }

@@ -49,4 +49,23 @@ public class Arquivos {
             System.out.println("Error: "+e);
         }
     }
+    /*Metodo que comprueba el tipo de acceso al fichero e indica si se puede escribir o no en el
+    *y si se puede o no leer a traves de la ruta absoluta que se le pasa
+    * @param ruta String con la ruta a comprobar
+    * @param nome String con el nombre del fichero
+    */
+    public static void modoAcceso(String ruta, String nome){
+        File archivo = new File(ruta, nome);
+        if(archivo.canRead()){
+            System.out.println("Lectura si");
+        }else{
+            System.out.println("Lectura non");
+        }
+        if(archivo.canWrite()){
+            System.out.println("Escritura si");
+        }else{
+            System.out.println("Escritura non");
+        }
+    }
+
 }

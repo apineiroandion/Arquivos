@@ -101,5 +101,54 @@ public class Arquivos {
             System.out.println("Ficheiro non en modo solo escritura");
         }
     }
-
+    /*Metodo que borra un ficheiro dada a ruta e o nome dun archivo
+    * @param ruta String con la ruta a comprobar
+    * @param nome String con el nombre del fichero
+     */
+    public static void borrarFicheiro(String ruta, String nome) {
+        File archivo = new File(ruta, nome);
+        if (archivo.delete()) {
+            System.out.println("Ficheiro borrado");
+        } else {
+            System.out.println("Ficheiro inexistente");
+        }
+    }
+    /*Metodo que borra un directorio dada a ruta
+    * @param ruta String con la ruta a comprobar
+     */
+    public static void borrarDirectorio(String ruta) {
+        File archivo = new File(ruta);
+        if (archivo.delete()) {
+            System.out.println("Directorio borrado");
+        } else {
+            System.out.println("Ruta inexistente ou con descencencia");
+        }
+    }
+    /*Metodo que enseñe archivos y directorios solo del primer nivel de una ruta absoluta
+    *@param ruta String
+     */
+    public static void mContido(String ruta) {
+        File arquivo = new File(ruta);
+        File[] archivos = arquivo.listFiles();
+        for (File archivo : archivos) {
+            if (archivo.isDirectory()) {
+                System.out.println("Directorio: " + archivo.getName());
+            } else {
+                System.out.println("Ficheiro: " + archivo.getName());
+            }
+        }
+    }
+    /*Metodo que amose os arquivos e subdirectorios de directorio que se lle pasa como obxetro file
+    @param ruta String
+     */
+    public static void mContido(File arquivo) {
+        File[] archivos = arquivo.listFiles();
+        for (File archivo : archivos) {
+            if (archivo.isDirectory()) {
+                System.out.println("Directorio: " + archivo.getName());
+            } else {
+                System.out.println("Ficheiro: " + archivo.getName());
+            }
+        }
+    }
 }
